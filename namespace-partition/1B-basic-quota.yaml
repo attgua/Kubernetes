@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  creationTimestamp: null
+  name: basicquota
+spec:
+  hard:
+    #configmaps: "1"
+    #pods: "2"
+    cpu: "1"
+    memory: "1G"

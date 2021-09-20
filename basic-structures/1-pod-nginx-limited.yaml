@@ -4,11 +4,11 @@ metadata:
   creationTimestamp: null
   labels:
     run: nginx
-  name: nginx4
+  name: nginx2
 spec:
   containers:
   - image: nginx
-    name: nginx
+    name: nginx2
     resources: 
       requests:
         memory: "0.5Gi"
