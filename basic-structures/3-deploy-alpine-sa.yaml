@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deplo-alpino
+  labels:
+    app: alpine
+spec: 
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: alpine
+  template: 
+    metadata:
+      labels:
+        app: alpine
+    spec:
+      serviceAccountName: appsa
+      containers:
+      - name: alpine
+        image: byrnedo/alpine-curl
+        command:
+          - "sh"
+          - "-c"
+          - "sleep 10000"
+  
