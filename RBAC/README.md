@@ -68,3 +68,24 @@ finally john have to copy the certificate in his .kube
 cp john.kubeconfig ~/.kube.config
 ```
 
+##### * Create the certificate for John and give to him only it  
+
+Better solution so you have not to share all those private file to him.
+
+
+
+##### Create a Role inside the cluster
+
+
+```
+k create role john-prod --verb=get,list --resource=pods --namespace=prod
+```
+
+##### Use Role-Binding
+
+```
+kubectl create rolebinding john-prod-rolebinding --role=john-prod  --user=john --namespace=prod
+```
+
+
+
